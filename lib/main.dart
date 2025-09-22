@@ -9,6 +9,14 @@ class MenuItem {
   MenuItem({required this.name, required this.price, this.quantity = 0});
 }
 
+// Fungsi main untuk menjalankan aplikasi
+void main() {
+  runApp(const MaterialApp(
+    home: MenuScreen(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
+
 // Widget utama aplikasi
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
@@ -23,7 +31,7 @@ class _MenuScreenState extends State<MenuScreen> {
     MenuItem(name: 'Makanan 1', price: 5000, quantity: 3),
     MenuItem(name: 'Makanan 2', price: 5000, quantity: 2),
     MenuItem(name: 'Makanan 3', price: 5000),
-    MenuItem(name: 'Makanan 4', price: 5000), // Duplikat sengaja untuk contoh
+    MenuItem(name: 'Makanan 4', price: 5000),
     MenuItem(name: 'Makanan 5', price: 5000),
   ];
 
@@ -94,6 +102,8 @@ class _MenuScreenState extends State<MenuScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       // Logika untuk tombol Transaction
+                      const snackBar = SnackBar(content: Text('Transaction processed!'));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
@@ -220,10 +230,3 @@ class _MenuScreenState extends State<MenuScreen> {
   }
 }
 
-// Fungsi main untuk menjalankan aplikasi
-void main() {
-  runApp(const MaterialApp(
-    home: MenuScreen(),
-    debugShowCheckedModeBanner: false,
-  ));
-}

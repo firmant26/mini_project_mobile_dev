@@ -1,6 +1,4 @@
-/// Variabel global untuk menyimpan data pengguna.
-/// Struktur: Map<String, Map<String, String>>
-/// Key luar adalah email, value adalah Map yang berisi fullName dan password.
+// Simulasi penyimpanan data user dalam aplikasi
 Map<String, Map<String, String>> userData = {
   // Contoh data awal (bisa dikosongkan)
   'test@email.com': {
